@@ -1,21 +1,20 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
-import { Dashboard, NotFound, Register, SignIn } from "./pages/index";
+import { Dashboard, NotFound, SignIn, WidgetView } from "./pages/index";
 import PageLayouts from "./pages/layout";
 import "./App.css"; // delete this
+import ROUTES_LINKS from "./constants/routes";
 
 const clientRoutes = createBrowserRouter(
 	createRoutesFromElements(
 		<Route>
 			{/* Index route */}
-			<Route path="/" element={<h1>Welcome!</h1>} />
+			<Route path={ROUTES_LINKS.home} element={<h1>Welcom!</h1>} />
 			{/* Auth Route */}
-			<Route path="/auth">
-				<Route path="signin" element={<SignIn />} />
-				<Route path="register" element={<Register />} />
-			</Route>
+			<Route path={ROUTES_LINKS.auth} element={<SignIn />} />
 			{/* Dashboard */}
-			<Route path="dashboard" element={<PageLayouts.RootLayout />}>
+			<Route path={ROUTES_LINKS.overview} element={<PageLayouts.RootLayout />}>
 				<Route index element={<Dashboard />} />
+				<Route path={ROUTES_LINKS.widget} element={<WidgetView />} />
 				<Route path="*" element={<NotFound />} />
 			</Route>
 			{/* 404 for index route */}

@@ -1,15 +1,26 @@
 // Dashboard for Admin
+import { Link, useNavigate } from "react-router-dom";
 import Components from "../components";
+import ROUTES_LINKS from "../constants/routes";
 
-export default function Dashboard() {
+export default function WidgetView() {
+	const navigate = useNavigate();
+
 	return (
 		<div className="nk-content-body">
 			<div className="nk-block-head nk-block-head-sm">
 				<div className="nk-block-between">
 					<div className="nk-block-head-content">
+						<div className="nk-block-head-sub">
+							<Link to="#x" onClick={() => navigate(-1)} className="back-to">
+								<em className="icon ni ni-arrow-left" />
+								<span>Overview</span>
+							</Link>
+						</div>
+
 						<h3 className="nk-block-title page-title d-flex justify-center align-center">
 							<em className="icon ni ni-dashboard me-2" />
-							Overview
+							Widget Name
 						</h3>
 					</div>
 					{/* .nk-block-head-content */}

@@ -1,14 +1,19 @@
 // This is the layout used by all other pages
-import { Outlet } from "react-router-dom";
+import { Outlet, matchPath, useLocation } from "react-router-dom";
 import Partial from "../partials";
 
 export default function RootLayout() {
+	const location = useLocation();
+	const isOverview = !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!matchPath(location.pathname, "/dashboard");
+
 	return (
 		<div className="nk-app-root">
 			{/* main @s */}
 			<div className="nk-main">
 				{/* sidebar @s */}
-				<Partial.SideBar />
+				{
+					isOverview && <Partial.SideBar />
+				}
 				{/* sidebar @e */}
 				{/* wrap @s */}
 				<div className="nk-wrap">

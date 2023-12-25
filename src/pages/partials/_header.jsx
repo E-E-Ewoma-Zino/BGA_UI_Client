@@ -1,23 +1,31 @@
 // Partial Header for dashboard
+import { matchPath, useLocation } from "react-router-dom";
 
 export default function _header() {
+	const location = useLocation();
+	const isOverview = !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!matchPath(location.pathname, "/dashboard");
+
 	return (
 		<div className="nk-header nk-header-fixed is-light">
 			<div className="container-fluid">
 				<div className="nk-header-wrap">
-					<div className="nk-menu-trigger d-xl-none ms-n1">
-						<a href="#x" className="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em className="icon ni ni-menu" /></a>
-					</div>
-					<div className="nk-header-brand d-xl-none">
+					{
+						isOverview && <div className="nk-menu-trigger d-xl-none ms-n1">
+							<a href="#x" className="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em className="icon ni ni-menu" /></a>
+						</div>
+					}
+					<div className={`nk-header-brand ${!isOverview ? "me-5" : "d-xl-none"}`}>
 						<a href="html/index.html" className="logo-link">
 							<img className="logo-light logo-img" src="/assets/images/logo.png" srcSet="/assets/images/logo2x.png 2x" alt="logo" />
 							<img className="logo-dark logo-img" src="/assets/images/logo-dark.png" srcSet="/assets/images/logo-dark2x.png 2x" alt="logo-dark" />
 						</a>
-					</div>{/* .nk-header-brand */}
+					</div>
+					{/* .nk-header-brand */}
 					<div className="nk-header-search ms-3 ms-xl-0">
 						<em className="icon ni ni-search" />
 						<input type="text" className="form-control border-transparent form-focus-none" placeholder="Search anything" />
-					</div>{/* .nk-header-news */}
+					</div>
+					{/* .nk-header-news */}
 					<div className="nk-header-tools">
 						<ul className="nk-quick-nav">
 							<li className="dropdown language-dropdown d-none d-sm-block me-n1">
@@ -54,7 +62,8 @@ export default function _header() {
 										</li>
 									</ul>
 								</div>
-							</li>{/* .dropdown */}
+							</li>
+							{/* .dropdown */}
 							<li className="dropdown chats-dropdown hide-mb-xs">
 								<a href="#x" className="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
 									<div className="icon-status icon-status-na"><em className="icon ni ni-comments" /></div>
@@ -85,7 +94,8 @@ export default function _header() {
 														</div>
 													</div>
 												</a>
-											</li>{/* .chat-item */}
+											</li>
+											{/* .chat-item */}
 											<li className="chat-item is-unread">
 												<a className="chat-link" href="html/apps-chats.html">
 													<div className="chat-media user-avatar bg-pink">
@@ -105,7 +115,8 @@ export default function _header() {
 														</div>
 													</div>
 												</a>
-											</li>{/* .chat-item */}
+											</li>
+											{/* .chat-item */}
 											<li className="chat-item">
 												<a className="chat-link" href="html/apps-chats.html">
 													<div className="chat-media user-avatar">
@@ -121,7 +132,8 @@ export default function _header() {
 														</div>
 													</div>
 												</a>
-											</li>{/* .chat-item */}
+											</li>
+											{/* .chat-item */}
 											<li className="chat-item">
 												<a className="chat-link" href="html/apps-chats.html">
 													<div className="chat-media user-avatar user-avatar-multiple">
@@ -145,7 +157,8 @@ export default function _header() {
 														</div>
 													</div>
 												</a>
-											</li>{/* .chat-item */}
+											</li>
+											{/* .chat-item */}
 											<li className="chat-item">
 												<a className="chat-link" href="html/apps-chats.html">
 													<div className="chat-media user-avatar">
@@ -162,7 +175,8 @@ export default function _header() {
 														</div>
 													</div>
 												</a>
-											</li>{/* .chat-item */}
+											</li>
+											{/* .chat-item */}
 											<li className="chat-item">
 												<a className="chat-link" href="html/apps-chats.html">
 													<div className="chat-media user-avatar bg-purple">
@@ -181,9 +195,12 @@ export default function _header() {
 														</div>
 													</div>
 												</a>
-											</li>{/* .chat-item */}
-										</ul>{/* .chat-list */}
-									</div>{/* .nk-dropdown-body */}
+											</li>
+											{/* .chat-item */}
+										</ul>
+										{/* .chat-list */}
+									</div>
+									{/* .nk-dropdown-body */}
 									<div className="dropdown-foot center">
 										<a href="html/apps-chats.html">View All</a>
 									</div>
@@ -254,8 +271,10 @@ export default function _header() {
 													<div className="nk-notification-time">2 hrs ago</div>
 												</div>
 											</div>
-										</div>{/* .nk-notification */}
-									</div>{/* .nk-dropdown-body */}
+										</div>
+										{/* .nk-notification */}
+									</div>
+									{/* .nk-dropdown-body */}
 									<div className="dropdown-foot center">
 										<a href="#x">View All</a>
 									</div>
@@ -302,8 +321,10 @@ export default function _header() {
 							</li>
 						</ul>
 					</div>
-				</div>{/* .nk-header-wrap */}
-			</div>{/* .container-fliud */}
+				</div>
+				{/* .nk-header-wrap */}
+			</div>
+			{/* .container-fliud */}
 		</div>
 	);
 }
