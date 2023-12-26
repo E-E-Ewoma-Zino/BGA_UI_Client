@@ -1,15 +1,18 @@
 // Partial Sidebar for Dashboar
 
+import { Link } from "react-router-dom";
+import ROUTES_LINKS from "../../constants/routes";
+
 export default function _sidebar() {
 	return (
 		<div className="nk-sidebar nk-sidebar-fixed is-light " data-content="sidebarMenu">
 			<div className="nk-sidebar-element nk-sidebar-head">
 				<div className="nk-sidebar-brand">
-					<a href="html/index.html" className="logo-link nk-sidebar-logo">
+					<Link to={ROUTES_LINKS.overview} className="logo-link nk-sidebar-logo">
 						<img className="logo-light logo-img" src="/assets/images/logo.png" srcSet="/assets/images/logo2x.png 2x" alt="logo" />
 						<img className="logo-dark logo-img" src="/assets/images/logo-dark.png" srcSet="/assets/images/logo-dark2x.png 2x" alt="logo-dark" />
 						<img className="logo-small logo-img logo-img-small" src="/assets/images/logo-small.png" srcSet="/assets/images/logo-small2x.png 2x" alt="logo-small" />
-					</a>
+					</Link>
 				</div>
 				<div className="nk-menu-trigger me-n2">
 					<a href="#x" className="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu">
@@ -30,12 +33,12 @@ export default function _sidebar() {
 							</li>
 							{/* .nk-menu-item */}
 							<li className="nk-menu-item">
-								<a href="html/index.html" className="nk-menu-link">
+								<Link to={ROUTES_LINKS.overview} className="nk-menu-link">
 									<span className="nk-menu-icon">
 										<em className="icon ni ni-dashboard" />
 									</span>
 									<span className="nk-menu-text">Overview</span>
-								</a>
+								</Link>
 							</li>
 							{/* .nk-menu-item */}
 							<li className="nk-menu-item">

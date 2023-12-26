@@ -1,7 +1,6 @@
 // Dashboard for Admin
 import { Link, useNavigate } from "react-router-dom";
 import Components from "../components";
-import ROUTES_LINKS from "../constants/routes";
 
 export default function WidgetView() {
 	const navigate = useNavigate();

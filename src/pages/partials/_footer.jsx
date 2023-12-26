@@ -5,7 +5,7 @@ export default function _footer() {
 		<div className="nk-footer">
 			<div className="container-fluid">
 				<div className="nk-footer-wrap">
-					<div className="nk-footer-copyright"> © 2023 DashLite. Template by <a href="https://softnio.com" rel="noreferrer" target="_blank">Softnio</a>
+					<div className="nk-footer-copyright"> © 2023 {process.env.REACT_APP_NAME}. Template by <a href="https://softnio.com" rel="noreferrer" target="_blank">Softnio</a>
 					</div>
 					<div className="nk-footer-links">
 						<ul className="nav nav-sm">

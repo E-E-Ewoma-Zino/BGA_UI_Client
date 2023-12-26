@@ -1,5 +1,6 @@
 // Partial Header for dashboard
-import { matchPath, useLocation } from "react-router-dom";
+import { Link, matchPath, useLocation } from "react-router-dom";
+import ROUTES_LINKS from "../../constants/routes";
 
 export default function _header() {
 	const location = useLocation();
@@ -15,10 +16,10 @@ export default function _header() {
 						</div>
 					}
 					<div className={`nk-header-brand ${!isOverview ? "me-5" : "d-xl-none"}`}>
-						<a href="html/index.html" className="logo-link">
+						<Link to={ROUTES_LINKS.overview} className="logo-link">
 							<img className="logo-light logo-img" src="/assets/images/logo.png" srcSet="/assets/images/logo2x.png 2x" alt="logo" />
 							<img className="logo-dark logo-img" src="/assets/images/logo-dark.png" srcSet="/assets/images/logo-dark2x.png 2x" alt="logo-dark" />
-						</a>
+						</Link>
 					</div>
 					{/* .nk-header-brand */}
 					<div className="nk-header-search ms-3 ms-xl-0">
