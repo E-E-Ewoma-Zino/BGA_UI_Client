@@ -6,6 +6,7 @@ export const login = async (username, password) => {
 		const { data } = await REQUEST.post("/auth", { username, password });
 
 		localStorage.setItem("token", data.result.token.token);
+		localStorage.setItem("client", data.result.client_id);
 
 		return data.result;
 	} catch (error) {

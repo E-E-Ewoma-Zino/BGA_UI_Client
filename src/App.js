@@ -1,5 +1,5 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
-import { Dashboard, Landing, NotFound, NotFoundAlt, SignIn, WidgetView } from "./pages/index";
+import { Dashboard, Landing, NotFound, NotFoundAlt, SignIn, WidgetView, getAllWidgetLoader } from "./pages/index";
 import PageLayouts from "./pages/Layout";
 import "./App.css"; // delete this
 import UTILS from "./utils";
@@ -15,7 +15,7 @@ const clientRoutes = createBrowserRouter(
 			{/* Dashboard */}
 			<Route element={<UTILS.PrivateRoutes />}>
 				<Route path={ROUTES_LINKS.overview} element={<PageLayouts.RootLayout />}>
-					<Route index element={<Dashboard />} />
+					<Route index element={<Dashboard />} loader={getAllWidgetLoader} />
 					<Route path={ROUTES_LINKS.widget} element={<WidgetView />} />
 					<Route path="*" element={<NotFound />} />
 				</Route>

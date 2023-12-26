@@ -1,8 +1,11 @@
 // Dashboard for Admin
 import { Link, useNavigate } from "react-router-dom";
 import Components from "../components";
+import ROUTES_LINKS from "../constants/routes";
+import { useSelector } from "react-redux";
 
 export default function WidgetView() {
+	const menuUrl = useSelector(state => state.menus.frameUrl);
 	const navigate = useNavigate();
 
 	return (
@@ -11,7 +14,7 @@ export default function WidgetView() {
 				<div className="nk-block-between">
 					<div className="nk-block-head-content">
 						<div className="nk-block-head-sub">
-							<Link to="#x" onClick={() => navigate(-1)} className="back-to">
+							<Link to="#x" onClick={() => navigate(`/${ROUTES_LINKS.overview}`)} className="back-to">
 								<em className="icon ni ni-arrow-left" />
 								<span>Overview</span>
 							</Link>
@@ -42,28 +45,16 @@ export default function WidgetView() {
 			</div>
 			{/* .nk-block-head */}
 			<div className="nk-block">
-				<div className="row g-gs">
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
+				<div className="card card-bordered card-preview">
+					<div className="card-inner">
+						<div className="card card-bordered w-100">
+							<iframe src={menuUrl} className="google-map border-0" allowFullScreen loading="lazy" />
+						</div>
 					</div>
 				</div>
-				{/* .row */}
+				{/* .card-preview */}
 			</div>
+
 			{/* .nk-block */}
 		</div>
 	);

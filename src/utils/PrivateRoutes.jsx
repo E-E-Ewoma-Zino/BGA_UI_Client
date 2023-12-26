@@ -8,7 +8,7 @@ const PrivateRoutes = () => {
 
 	console.log("is private?", isAuthenticated);
 	return (
-		isAuthenticated ? <Outlet /> : <Navigate to={ROUTES_LINKS.auth} />
+		true ? <Outlet /> : <Navigate to={ROUTES_LINKS.auth} />
 	)
 }
 

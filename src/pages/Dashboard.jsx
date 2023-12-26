@@ -1,7 +1,15 @@
 // Dashboard for Admin
+import { useDispatch } from "react-redux";
+import getAllWidget from "../api/widget";
 import Components from "../components";
+import { useLoaderData } from "react-router-dom";
+import { setWidgetId } from "../redux/widgetSlice";
+
 
 export default function Dashboard() {
+	const widgets = useLoaderData();
+	const dispatch = useDispatch();
+
 	return (
 		<div className="nk-content-body">
 			<div className="nk-block-head nk-block-head-sm">
@@ -33,28 +41,23 @@ export default function Dashboard() {
 			{/* .nk-block-head */}
 			<div className="nk-block">
 				<div className="row g-gs">
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
-					<div className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-						<Components.WidgetCard />
-					</div>
+					{
+						widgets.length ?
+							widgets.map((widget, index) =>
+								<div key={index} className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
+									{console.log("the wiget", widget)}
+									<Components.WidgetCard onClick={() => dispatch(setWidgetId(widget._id))} name={widget.name} iconUrl={widget.icon.url} internal={widget.internal} isActive={widget.isActive} url={widget.url} />
+								</div>
+							) : <Components.Spinner color="primary" />
+					}
 				</div>
 				{/* .row */}
 			</div>
 			{/* .nk-block */}
 		</div>
 	);
+}
+
+export function getAllWidgetLoader() {
+	return getAllWidget();
 }

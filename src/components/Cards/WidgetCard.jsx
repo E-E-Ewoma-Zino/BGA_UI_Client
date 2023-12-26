@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 import ROUTES_LINKS from "../../constants/routes";
 
-export default function WidgetCard() {
+export default function WidgetCard({ name, url, internal, isActive, iconUrl, onClick }) {
 	return (
 		<div className="card">
 			<div className="card-inner">
@@ -25,18 +25,20 @@ export default function WidgetCard() {
 					</div>
 					<div className="user-card user-card-s2">
 						<div className="user-avatar md bg-primary">
-							<span>AB</span>
+							{
+								iconUrl ? <img src={iconUrl} alt={name} className="img-fluid w-100 h-100" /> : <span>AB</span>
+							}
 							{/* <div className="status dot dot-lg dot-success" /> */}
 						</div>
 						<div className="user-info">
-							<h6>Abu Bin Ishtiyak</h6>
+							<h6>{name}</h6>
 						</div>
 					</div>
 					<div className="team-details">
 						<p>Describe what these widget is about here</p>
 					</div>
 					<div className="team-view mt-3">
-						<Link to={`${ROUTES_LINKS.overview}/${Math.random()}`} className="btn btn-round btn-outline-light w-150px">
+						<Link to={`${ROUTES_LINKS.overview}/${internal ? name : url}`} className="btn btn-round btn-outline-light w-150px" onClick={onClick}>
 							<span>View</span>
 						</Link>
 					</div>
