@@ -7,6 +7,7 @@ export const login = async (username, password) => {
 
 		localStorage.setItem("token", data.result.token.token);
 		localStorage.setItem("client", data.result.client_id);
+		localStorage.setItem("isAuthenticated", true);
 
 		return data.result;
 	} catch (error) {

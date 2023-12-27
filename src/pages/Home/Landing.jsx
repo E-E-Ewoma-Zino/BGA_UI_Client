@@ -1,6 +1,6 @@
 // landing page
 import { Link } from "react-router-dom";
-import ROUTES_LINKS from "../constants/routes";
+import ROUTES_LINKS from "../../constants/routes";
 import { Helmet } from "react-helmet";
 
 export default function Landing() {
@@ -34,12 +34,12 @@ export default function Landing() {
 								{/* .header-nav-toggle */}
 								<nav className="header-menu" data-content="mainNav">
 									<ul className="menu-list ms-lg-auto">
-										<li className="menu-item"><Link href="#home" className="menu-link nav-link">Home</Link></li>
-										<li className="menu-item"><Link to="#service" className="menu-link nav-link">Service</Link></li>
-										<li className="menu-item"><Link to="#feature" className="menu-link nav-link">Features</Link></li>
-										<li className="menu-item"><Link to="#pricing" className="menu-link nav-link">Pricing</Link></li>
-										<li className="menu-item"><Link to="#reviews" className="menu-link nav-link">Reviews</Link></li>
-										<li className="menu-item"><Link to={ROUTES_LINKS.auth} className="menu-link nav-link">SignIn</Link></li>
+										<li className="menu-item"><a href="#home" className="menu-link nav-link">Home</a></li>
+										<li className="menu-item"><a href="#service" className="menu-link nav-link">Service</a></li>
+										<li className="menu-item"><a href="#feature" className="menu-link nav-link">Features</a></li>
+										<li className="menu-item"><a href="#pricing" className="menu-link nav-link">Pricing</a></li>
+										<li className="menu-item"><a href="#reviews" className="menu-link nav-link">Reviews</a></li>
+										<li className="menu-item"><a href={ROUTES_LINKS.auth} className="menu-link nav-link">SignIn</a></li>
 									</ul>
 									<ul className="menu-btns">
 										<li>

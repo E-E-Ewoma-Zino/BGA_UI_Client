@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 import ROUTES_LINKS from "../../constants/routes";
 
-export default function WidgetCard({ name, url, internal, isActive, iconUrl, onClick }) {
+export default function WidgetCard({ id, name, url, internal, isActive, iconUrl, onClick }) {
 	return (
 		<div className="card">
 			<div className="card-inner">
@@ -38,9 +38,13 @@ export default function WidgetCard({ name, url, internal, isActive, iconUrl, onC
 						<p>Describe what these widget is about here</p>
 					</div>
 					<div className="team-view mt-3">
-						<Link to={`${ROUTES_LINKS.overview}/${internal ? name : url}`} className="btn btn-round btn-outline-light w-150px" onClick={onClick}>
-							<span>View</span>
-						</Link>
+						{
+							internal ? <Link to={`${ROUTES_LINKS.overview}/${id}`} className="btn btn-round btn-outline-light w-150px" onClick={onClick}>
+								<span>View</span>
+							</Link> : <Link to={`${url}`} target="_blank" className="btn btn-round btn-outline-light w-150px" onClick={onClick}>
+								<span>View</span>
+							</Link>
+						}
 					</div>
 				</div>{/* .team */}
 			</div>{/* .card-inner */}

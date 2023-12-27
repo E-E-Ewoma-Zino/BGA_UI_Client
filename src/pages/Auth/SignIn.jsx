@@ -30,7 +30,6 @@ export default function SignIn() {
 		});
 	}
 
-
 	// on user submit
 	const handleSubmit = async (e) => {
 		e.preventDefault();

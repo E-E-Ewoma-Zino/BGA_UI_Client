@@ -4,11 +4,12 @@ import ROUTES_LINKS from "../constants/routes";
 
 
 const PrivateRoutes = () => {
-	const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+	// const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+	const isAuthenticated = Boolean(localStorage.getItem("isAuthenticated"));
 
 	console.log("is private?", isAuthenticated);
 	return (
-		true ? <Outlet /> : <Navigate to={ROUTES_LINKS.auth} />
+		isAuthenticated ? <Outlet /> : <Navigate to={ROUTES_LINKS.auth} />
 	)
 }
 

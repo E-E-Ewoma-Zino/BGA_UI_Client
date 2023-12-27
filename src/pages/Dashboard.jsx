@@ -45,8 +45,7 @@ export default function Dashboard() {
 						widgets.length ?
 							widgets.map((widget, index) =>
 								<div key={index} className="col-xxl-3 col-lg-4 col-md-6 col-sm-6">
-									{console.log("the wiget", widget)}
-									<Components.WidgetCard onClick={() => dispatch(setWidgetId(widget._id))} name={widget.name} iconUrl={widget.icon.url} internal={widget.internal} isActive={widget.isActive} url={widget.url} />
+									<Components.WidgetCard id={widget._id} onClick={() => dispatch(setWidgetId(widget._id))} name={widget.name} iconUrl={widget.icon.url} internal={widget.internal} isActive={widget.isActive} url={widget.url} />
 								</div>
 							) : <Components.Spinner color="primary" />
 					}

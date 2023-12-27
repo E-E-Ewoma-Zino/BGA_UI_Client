@@ -1,5 +1,5 @@
 import RootLayout from "./Root.layout";
 
-const PageLayouts = {RootLayout};
+const PageLayouts = { RootLayout };
 
 export default PageLayouts;

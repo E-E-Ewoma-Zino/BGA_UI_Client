@@ -1,29 +1,15 @@
 // Partial Sidebar for Dashboar
 import { currentMenu } from "../../redux/menuClientSlice";
-import clientMenu from "../../api/clientMenu";
-import ROUTES_LINKS from "../../constants/routes";
 import { useDispatch, useSelector } from "react-redux";
+import ROUTES_LINKS from "../../constants/routes";
+import Components from "../../components";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function _sidebar() {
-	const dispatch = useDispatch();
-	const [menus, setMenu] = useState({});
+	const menus = useSelector(state => state.menus.menus);
 	const [active, setActive] = useState(false);
-	const widgetId = useSelector(state => state.widget.widgetId);
-
-	useEffect(() => {
-		async function getMenus() {
-			console.log("widgetId", widgetId);
-			const theMenus = await clientMenu(widgetId);
-			console.log("The menu", theMenus);
-			setMenu(theMenus);
-			dispatch(currentMenu(theMenus[Object.keys(theMenus)[0]]?.url))
-		}
-
-		console.log("active???", active);
-		getMenus();
-	}, [widgetId]);
+	const dispatch = useDispatch();
 
 	return (
 		<div className="nk-sidebar nk-sidebar-fixed is-light " data-content="sidebarMenu">
@@ -49,38 +35,41 @@ export default function _sidebar() {
 				<div className="nk-sidebar-content">
 					<div className="nk-sidebar-menu" data-simplebar>
 						<ul className="nk-menu">
+							{console.log("look art me", menus)}
 							{
-								Object.keys(menus).map((key, index) => {
-									return <li key={index} className="nk-menu-item">
-										{/* .nk-menu-item */}
-										{console.log("my menus", menus[key])}
-										<Link to="#x" className="nk-menu-link" onClick={() => dispatch(currentMenu(menus[key].url))}>
-											<span className="nk-menu-icon">
-												<em className="icon ni ni-dashboard" />
-											</span>
-											<span className="nk-menu-text">{menus[key].name}</span>
-										</Link>
-									</li>
-									if (menus[key]?.menu?.length) return <li key={index} className={`nk-menu-item has-sub ${active? " active": ''}`} onClick={() => setActive(pre => !pre)}>
-										{/* .nk-menu-item */}
-										<a href="#x" className="nk-menu-link nk-menu-toggle">
-											<span className="nk-menu-icon">
-												<em className="icon ni ni-users-fill" />
-											</span>
-											<span className="nk-menu-text">{menus[key].name}</span>
-										</a>
-										<ul className="nk-menu-sub">
-											{
-												menus[key].menu.map(menu => {
-													return <li className="nk-menu-item">
-														<a href="#x" className="nk-menu-link"><span className="nk-menu-text" onClick={() => dispatch(currentMenu(menu.url))}>{menu.name}</span></a>
-													</li>
-												})
-											}
-										</ul>
-										{/* .nk-menu-sub */}
-									</li>
-								})
+								menus ?
+									Object.keys(menus).map((key, index) => {
+										if (!menus[key]?.menu?.length) return <li key={index} className="nk-menu-item">
+											{/* .nk-menu-item */}
+											<Link to="#x" className="nk-menu-link" onClick={() => console.log("I was clicked", dispatch(currentMenu(menus[key].url)))}>
+												<span className="nk-menu-icon">
+													<em className="icon ni ni-dashboard" />
+												</span>
+												<span className="nk-menu-text">{menus[key].name}</span>
+											</Link>
+										</li>
+
+										return <li key={index} className={`nk-menu-item has-sub ${active ? " active" : ''}`} onClick={() => setActive(pre => !pre)}>
+											{/* .nk-menu-item */}
+											<a href="#x" className="nk-menu-link nk-menu-toggle">
+												<span className="nk-menu-icon">
+													<em className="icon ni ni-users-fill" />
+												</span>
+												<span className="nk-menu-text">{menus[key].name}</span>
+											</a>
+											<ul className="nk-menu-sub">
+												{
+													menus[key].menu.map(menu => {
+														return <li className="nk-menu-item">
+															<a href="#x" className="nk-menu-link"><span className="nk-menu-text" onClick={() => dispatch(currentMenu(menu.url))}>{menu.name}</span></a>
+														</li>
+													})
+												}
+											</ul>
+											{/* .nk-menu-sub */}
+										</li>
+									}) :
+									<Components.Spinner color="primary" />
 							}
 							{/* <li className="nk-menu-heading">
 								<h6 className="overline-title text-primary-alt">Dashboards</h6>
