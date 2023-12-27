@@ -1,4 +1,4 @@
-import { Dashboard, Landing, NotFound, NotFoundAlt, SignIn, WidgetView, getAllMenuLoader, getAllWidgetLoader } from "./pages/index";
+import { Dashboard, GetAllWidgetLoader, Landing, NotFound, NotFoundAlt, SignIn, WidgetView, getAllMenuLoader } from "./pages/index";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import ROUTES_LINKS from "./constants/routes";
 import PageLayouts from "./pages/Layout";
@@ -14,7 +14,7 @@ const clientRoutes = createBrowserRouter(
 			{/* Dashboard */}
 			<Route element={<UTILS.PrivateRoutes />}>
 				<Route path={ROUTES_LINKS.overview} element={<PageLayouts.RootLayout />}>
-					<Route index element={<Dashboard />} loader={getAllWidgetLoader} />
+					<Route index element={<Dashboard />} loader={GetAllWidgetLoader} />
 					<Route path={ROUTES_LINKS.widget} element={<WidgetView />} loader={getAllMenuLoader}/>
 					<Route path="*" element={<NotFound />} />
 				</Route>

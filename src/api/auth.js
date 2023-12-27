@@ -6,7 +6,7 @@ export const login = async (username, password) => {
 		const { data } = await REQUEST.post("/auth", { username, password });
 
 		localStorage.setItem("token", data.result.token.token);
-		localStorage.setItem("client", data.result.client_id);
+		localStorage.setItem("client", JSON.stringify(data.result));
 		localStorage.setItem("isAuthenticated", true);
 
 		return data.result;

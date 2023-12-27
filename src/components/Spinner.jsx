@@ -1,8 +1,8 @@
 // Spinner component
 
-export default function Spinner({color}) {
+export default function Spinner({color, className}) {
 	return (
-		<div className={"spinner-border text-" + color} role="status">
+		<div className={`spinner-border ${className} text-${color}`} role="status">
 			<span className="visually-hidden">Loading...</span>
 		</div>
 	);

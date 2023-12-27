@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	error: null,
-	client: null,
+	client: JSON.parse(localStorage.getItem("client")) || null,
 	loading: true,
-	isAuthenticated: false,
-	token: ''
+	isAuthenticated: localStorage.getItem("isAuthenticated") || null,
+	token: localStorage.getItem("token") || null
 }
 
 const authSlice = createSlice({

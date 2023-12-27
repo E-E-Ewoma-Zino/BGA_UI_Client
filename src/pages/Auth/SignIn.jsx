@@ -40,7 +40,6 @@ export default function SignIn() {
 
 			if (client.error) {
 				dispatch(authError(client));
-				console.log(">>>fowiha", client);
 				window.NioApp.Toast(client.message || "Failled to login", "error");
 			} else {
 				dispatch(clientSignIn(client));
@@ -88,7 +87,7 @@ export default function SignIn() {
 											<div>
 												<div className="form-label-group">
 													<label className="form-label" htmlFor="default-01">Email</label>
-													<a className="link link-primary link-sm" tabIndex={-1} href="#x">Need Help?</a>
+													{/* <a className="link link-primary link-sm" tabIndex={-1} href="#x">Need Help?</a> */}
 												</div>
 												<div className="form-control-wrap">
 													<input type="email" className="form-control form-control-lg" id="default-01" name="username" value={input.username} onChange={handleInputChange} placeholder="Enter your email address or username" required={true} />
@@ -100,7 +99,7 @@ export default function SignIn() {
 										<div className="form-group">
 											<div className="form-label-group">
 												<label className="form-label" htmlFor="password">Passcode</label>
-												<a className="link link-primary link-sm" tabIndex={-1} href="html/pages/auths/auth-reset-v3.html">Forgot Code?</a>
+												{/* <a className="link link-primary link-sm" tabIndex={-1} href="html/pages/auths/auth-reset-v3.html">Forgot Code?</a> */}
 											</div>
 											<div className="form-control-wrap">
 												<a tabIndex={-1} href="#x" className="form-icon form-icon-right passcode-switch lg" data-target="password">
@@ -123,7 +122,7 @@ export default function SignIn() {
 								</div>
 								{/* .nk-block */}
 								<div className="nk-block nk-auth-footer">
-									<div className="nk-block-between">
+									<div className="nk-block-between d-none d-md-flex">
 										<ul className="nav nav-sm">
 											<li className="nav-item">
 												<a className="link link-primary fw-normal py-2 px-3 fs-13px" href="#x">Terms &amp; Condition</a>
@@ -175,7 +174,7 @@ export default function SignIn() {
 								{/* .nk-block */}
 							</div>
 							{/* .nk-split-content */}
-							<div className="nk-split-content nk-split-stretch bg-dark d-flex justify-center align-center flex-column">
+							<div className="nk-split-content nk-split-stretch bg-dark d-none d-md-flex justify-center align-center flex-column">
 								<img src="/assets/images/bga1.png" alt="bga" />
 								<h2 className="ff-base fw-bold text-center text-light mt-5">
 									WE PROVIDE <em className="text-primary">MARKETING</em> & DEVELOPMENT SERVICES

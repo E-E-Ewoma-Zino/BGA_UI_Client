@@ -3,7 +3,12 @@ import REQUEST from "../services/axios.service";
 
 const getAllWidget = async (clientId) => {
 	try {
-		const { data } = await REQUEST.get("/widget/get/all/" + localStorage.getItem("client"));
+		const { data } = await REQUEST.get("/widget/get/all/" + clientId, {
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: localStorage.getItem("token")
+			}
+		});
 
 		return data.result;
 	} catch (error) {

@@ -8,7 +8,7 @@ export default function WidgetCard({ id, name, url, internal, isActive, iconUrl,
 		<div className="card">
 			<div className="card-inner">
 				<div className="team">
-					<div className="team-status bg-primary text-white"><em className="icon ni ni-bell" /></div>
+					<div className="team-status bg-primary text-white"><em className="icon ni ni-external-alt" /></div>
 					<div className="team-options">
 						<div className="drodown">
 							<a href="#x" className="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-bs-toggle="dropdown"><em className="icon ni ni-more-h" /></a>
@@ -26,7 +26,7 @@ export default function WidgetCard({ id, name, url, internal, isActive, iconUrl,
 					<div className="user-card user-card-s2">
 						<div className="user-avatar md bg-primary">
 							{
-								iconUrl ? <img src={iconUrl} alt={name} className="img-fluid w-100 h-100" /> : <span>AB</span>
+								iconUrl ? <img src={iconUrl} alt={name} className="img-fluid object-fit-cover h-100" /> : <span>AB</span>
 							}
 							{/* <div className="status dot dot-lg dot-success" /> */}
 						</div>
@@ -35,7 +35,7 @@ export default function WidgetCard({ id, name, url, internal, isActive, iconUrl,
 						</div>
 					</div>
 					<div className="team-details">
-						<p>Describe what these widget is about here</p>
+						{/* <p>Describe what these widget is about here</p> */}
 					</div>
 					<div className="team-view mt-3">
 						{
