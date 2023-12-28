@@ -23,9 +23,7 @@ export default function WidgetView() {
 	dispatch(setMenu(menus));
 
 	
-	useEffect(()=>{
-		document.getElementById('nk-content').style.padding = '0px'
-	}, [])
+	
 
 	return (
 		<div className="nk-content-body">
