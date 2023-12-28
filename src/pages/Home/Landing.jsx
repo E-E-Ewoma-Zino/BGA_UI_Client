@@ -583,11 +583,11 @@ export default function Landing() {
 											<circle cx={24} cy={23} r="2.5" fill="none" stroke="#9cabff" strokeMiterlimit={10} />
 										</svg>
 									</div>
-									<h2 className="title">Get Started with {process.env.REACT_APP_NAME}</h2>
-									<p className="lead">People have chosen {process.env.REACT_APP_NAME} to power the place on the web they call “home” — join the family.</p>
+									<h2 className="title">Get Started with Gorilla Metrics</h2>
+									<p className="lead">People have chosen Gorilla Metrics to power the place on the web they call “home” — join the family.</p>
 									<ul className="btns-inline justify-center">
 										<li>
-											<Link to={ROUTES_LINKS.overview} rel="noreferrer" target="_blank" className="btn btn-xl btn-primary">Get {process.env.REACT_APP_NAME}</Link>
+											<Link to={ROUTES_LINKS.overview} rel="noreferrer" target="_blank" className="btn btn-xl btn-primary">Get Gorilla Metrics</Link>
 										</li>
 									</ul>
 								</div>
@@ -626,7 +626,7 @@ export default function Landing() {
 						<hr className="hr border-light mb-0 mt-n1" />
 						<div className="row g-3 align-items-center justify-content-md-between py-4">
 							<div className="col-md-8">
-								<div className="text-base">Copyright © 2023 {process.env.REACT_APP_NAME}.</div>
+								<div className="text-base">Copyright © 2023 Gorilla Metrics.</div>
 							</div>
 							{/* .col */}
 							<div className="col-md-4 d-flex justify-content-md-end">
