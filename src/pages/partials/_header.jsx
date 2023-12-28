@@ -18,12 +18,18 @@ export default function _header() {
 		navigate(ROUTES_LINKS.auth);
 	}
 
+	const handleClick = ()=>{
+		document.getElementById('nk-sidebar')?.classList.add('nk-sidebar-active')
+		document.body.classList.add('nav-shown')
+		
+	}
+
 	return (
 		<div className="nk-header nk-header-fixed is-light">
 			<div className="container-fluid">
 				<div className="nk-header-wrap">
 					{
-						isOverview && <div className="nk-menu-trigger d-xl-none ms-n1">
+						isOverview && <div onClick={() => handleClick()} className="nk-menu-trigger d-xl-none ms-n1">
 							<a href="#x" className="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em className="icon ni ni-menu" /></a>
 						</div>
 					}

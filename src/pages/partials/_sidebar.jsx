@@ -4,15 +4,26 @@ import { useDispatch, useSelector } from "react-redux";
 import ROUTES_LINKS from "../../constants/routes";
 import Components from "../../components";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function _sidebar() {
+	const sideRef = useRef()
 	const menus = useSelector(state => state.menus.menus);
 	const [active, setActive] = useState(false);
 	const dispatch = useDispatch();
 
+
+	const handleClick = ()=>{
+		console.log('hey')
+		if(sideRef.current.classList.contains('is-compact') === false){
+			sideRef.current.classList.add('is-compact')
+		}else{
+			sideRef.current.classList.remove('is-compact')
+		}
+	}
+
 	return (
-		<div className="nk-sidebar nk-sidebar-fixed is-light " data-content="sidebarMenu">
+		<div id="nk-sidebar" ref={sideRef} className="nk-sidebar nk-sidebar-fixed is-light " data-content="sidebarMenu">
 			<div className="nk-sidebar-element nk-sidebar-head">
 				<div className="nk-sidebar-brand">
 					<Link to={ROUTES_LINKS.overview} className="logo-link nk-sidebar-logo">
@@ -21,7 +32,7 @@ export default function _sidebar() {
 						<img className="logo-small logo-img logo-img-small" src="/assets/images/logo-dark-small2x.png"  alt="logo-small" />
 					</Link>
 				</div>
-				<div className="nk-menu-trigger me-n2">
+				<div onClick={()=> handleClick()} className="nk-menu-trigger me-n2">
 					<a href="#x" className="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu">
 						<em className="icon ni ni-arrow-left" />
 					</a>
