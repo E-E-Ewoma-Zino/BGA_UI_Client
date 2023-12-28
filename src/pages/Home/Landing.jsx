@@ -15,7 +15,9 @@ export default function Landing() {
 		}, 2000);
 	});
 
+
 	return (
+		
 		<div className="nk-app-root">
 			<Helmet>
 				<title>BGA Matrix</title>

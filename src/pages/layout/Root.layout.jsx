@@ -25,7 +25,7 @@ export default function RootLayout() {
 					<Partial.Header />
 					{/* main header @e */}
 					{/* content @s */}
-					<div className="nk-content">
+					<div id='nk-content'  className="nk-content">
 						<div className="container-fluid">
 							<div className="nk-content-inner">
 								<Outlet />
