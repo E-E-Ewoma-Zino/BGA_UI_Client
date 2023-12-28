@@ -123,7 +123,7 @@ export default function SignIn() {
 									{/* form */}
 								</div>
 								{/* .nk-block */}
-								<div className="nk-block nk-auth-footer">
+								<div className="nk-block nk-auth-footer d-none">
 									<div className="nk-block-between d-none d-md-flex">
 										<ul className="nav nav-sm">
 											<li className="nav-item">
