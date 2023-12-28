@@ -4,6 +4,8 @@ import Components from "../../components";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
+import landingPic from '../../assets/image/a.png'
+import landingPic2 from '../../assets/image/b.png'
 
 export default function Landing() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -97,7 +99,7 @@ export default function Landing() {
 								</div>
 								<div className="col-lg-6 mb-n3 mb-lg-0">
 									<div className="header-image header-image-s2">
-										<img src="/assets/images/lms/theme/a.png" alt='' />
+										<img src={landingPic} alt='' />
 									</div>
 									{/* .header-image */}
 								</div>
@@ -282,7 +284,7 @@ export default function Landing() {
 						<div className="row align-items-center justify-content-lg-between g-gs">
 							<div className="col-lg-5">
 								<div className="img-block img-block-s1 left">
-									<img src="/assets/images/lms/theme/b.png" alt="img" />
+									<img src={landingPic2} alt="img" />
 								</div>
 								{/* .img-block */}
 							</div>
