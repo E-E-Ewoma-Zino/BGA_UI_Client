@@ -5,7 +5,6 @@ import ROUTES_LINKS from "../../constants/routes";
 import Components from "../../components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import logo from '../../../public/assets/images/logo.png'
 
 export default function _sidebar() {
 	const menus = useSelector(state => state.menus.menus);
@@ -17,9 +16,9 @@ export default function _sidebar() {
 			<div className="nk-sidebar-element nk-sidebar-head">
 				<div className="nk-sidebar-brand">
 					<Link to={ROUTES_LINKS.overview} className="logo-link nk-sidebar-logo">
-						<img className="logo-light logo-img" src={logo} alt="logo" />
-						<img className="logo-dark logo-img" src={logo} alt="logo-dark" />
-						<img className="logo-small logo-img logo-img-small" src={logo} alt="logo-small" />
+						<img className="logo-light logo-img" src="/assets/images/logo.png" srcSet="/assets/images/logo2x.png 2x" alt="logo" />
+						<img className="logo-dark logo-img" src="/assets/images/logo-dark.png" srcSet="/assets/images/logo-dark2x.png 2x" alt="logo-dark" />
+						<img className="logo-small logo-img logo-img-small" src="/assets/images/logo-small.png" srcSet="/assets/images/logo-small2x.png 2x" alt="logo-small" />
 					</Link>
 				</div>
 				<div className="nk-menu-trigger me-n2">
