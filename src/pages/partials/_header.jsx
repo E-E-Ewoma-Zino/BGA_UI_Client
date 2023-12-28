@@ -3,6 +3,7 @@ import { Link, matchPath, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ROUTES_LINKS from "../../constants/routes";
 import { logOut } from "../../redux/authSlice";
+import logo from '../../../public/assets/images/logo.png'
 
 export default function _header() {
 	const location = useLocation();
@@ -29,8 +30,8 @@ export default function _header() {
 					}
 					<div className={`nk-header-brand ${!isOverview ? "me-5" : "d-xl-none"}`}>
 						<Link to={ROUTES_LINKS.overview} className="logo-link">
-							<img className="logo-light logo-img" src="/assets/images/logo.png" srcSet="/assets/images/logo2x.png 2x" alt="logo" />
-							<img className="logo-dark logo-img" src="/assets/images/logo-dark.png" srcSet="/assets/images/logo-dark2x.png 2x" alt="logo-dark" />
+							<img className="logo-light logo-img" src={logo} alt="logo" />
+							<img className="logo-dark logo-img" src={logo} alt="logo-dark" />
 						</Link>
 					</div>
 					{/* .nk-header-brand */}
