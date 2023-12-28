@@ -14,13 +14,19 @@ export default function _sidebar() {
 
 
 	const handleClick = ()=>{
-		console.log('hey')
 		if(sideRef.current.classList.contains('is-compact') === false){
 			sideRef.current.classList.add('is-compact')
 		}else{
 			sideRef.current.classList.remove('is-compact')
 		}
+		if(document.getElementById('nk-sidebar')?.classList.contains('nk-sidebar-active') === true){
+			
+			document.getElementById('nk-sidebar')?.classList.remove('nk-sidebar-active')
+			document.body.classList.remove('nav-shown')
+		}
 	}
+
+	
 
 	return (
 		<div id="nk-sidebar" ref={sideRef} className="nk-sidebar nk-sidebar-fixed is-light " data-content="sidebarMenu">
