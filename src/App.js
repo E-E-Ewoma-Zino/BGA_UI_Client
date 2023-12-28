@@ -3,6 +3,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import ROUTES_LINKS from "./constants/routes";
 import PageLayouts from "./pages/layout/index";
 import UTILS from "./utils";
+import './app.css'
 
 const clientRoutes = createBrowserRouter(
 	createRoutesFromElements(

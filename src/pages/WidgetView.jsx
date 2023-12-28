@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import clientMenu from "../api/clientMenu";
 import Components from "../components";
+import { Helmet } from "react-helmet";
 
 export default function WidgetView() {
 	const menus = useLoaderData();
@@ -23,10 +24,19 @@ export default function WidgetView() {
 	dispatch(setMenu(menus));
 
 	
-	
+
 
 	return (
 		<div className="nk-content-body">
+			<Helmet>
+				<style>
+					{`
+					#nk-content {
+						padding: 0 !important;
+					}
+					`}
+				</style>
+			</Helmet>
 			{/* .nk-block-head */}
 			<div className="nk-block">
 				{

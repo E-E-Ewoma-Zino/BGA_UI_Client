@@ -9,6 +9,7 @@ import { useState, useRef } from "react";
 export default function _sidebar() {
 	const sideRef = useRef()
 	const menus = useSelector(state => state.menus.menus);
+	const [activeMenu, setActiveMenu] = useState(null)
 	const [active, setActive] = useState(false);
 	const dispatch = useDispatch();
 
@@ -52,15 +53,26 @@ export default function _sidebar() {
 				<div className="nk-sidebar-content">
 					<div className="nk-sidebar-menu" data-simplebar>
 						<ul className="nk-menu">
+						<li className="nk-menu-item">
+							{/* .nk-menu-item */}
+							<Link to={ROUTES_LINKS.overview} className="nk-menu-link" >
+								<span className="nk-menu-icon">
+									{/* <em className="icon ni ni-view-x7" /> */}
+									<em class="icon ni ni-grid-c"></em>
+								</span>
+								<span className="nk-menu-text">Dashboard</span>
+							</Link>
+						</li>
 							{console.log("look art me", menus)}
 							{
 								menus ?
 									Object.keys(menus).map((key, index) => {
 										if (!menus[key]?.menu?.length) return <li key={index} className="nk-menu-item">
 											{/* .nk-menu-item */}
-											<Link to="#x" className="nk-menu-link" onClick={() => console.log("I was clicked", dispatch(currentMenu(menus[key].url)))}>
+											<Link to="#x" className={`nk-menu-link ${activeMenu === menus[key].name && 'active-state'}`} onClick={() => {console.log("I was clicked", dispatch(currentMenu(menus[key].url))); setActiveMenu(menus[key].name)}}>
 												<span className="nk-menu-icon">
 													<em className="icon ni ni-view-x7" />
+													
 												</span>
 												<span className="nk-menu-text">{menus[key].name}</span>
 											</Link>
@@ -74,11 +86,11 @@ export default function _sidebar() {
 												</span>
 												<span className="nk-menu-text">{menus[key].name}</span>
 											</a>
-											<ul className="nk-menu-sub">
+											<ul onClick={(e)=> e.stopPropagation()} className="nk-menu-sub">
 												{
 													menus[key].menu.map(menu => {
 														return <li className="nk-menu-item">
-															<a href="#x" className="nk-menu-link"><span className="nk-menu-text" onClick={() => dispatch(currentMenu(menu.url))}>{menu.name}</span></a>
+															<a href="#x" className={`nk-menu-link  ${activeMenu === menus[key].name && 'active-state'}`}><span className="nk-menu-text" onClick={() => {dispatch(currentMenu(menu.url)); setActiveMenu(menus[key].name)}}>{menu.name}</span></a>
 														</li>
 													})
 												}
