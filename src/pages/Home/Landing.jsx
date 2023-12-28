@@ -49,13 +49,13 @@ export default function Landing() {
 										<li className="menu-item"><a href="#home" className="menu-link nav-link">Home</a></li>
 										<li className="menu-item"><a href="#service" className="menu-link nav-link">Service</a></li>
 										<li className="menu-item"><a href="#feature" className="menu-link nav-link">Features</a></li>
-										<li className="menu-item"><a href="#pricing" className="menu-link nav-link">Pricing</a></li>
+										{/* <li className="menu-item"><a href="#pricing" className="menu-link nav-link">Pricing</a></li> */}
 										<li className="menu-item"><a href="#reviews" className="menu-link nav-link">Reviews</a></li>
-										<li className="menu-item"><a href={ROUTES_LINKS.auth} className="menu-link nav-link">SignIn</a></li>
+										{/* <li className="menu-item"><a href={ROUTES_LINKS.auth} className="menu-link nav-link">SignIn</a></li> */}
 									</ul>
 									<ul className="menu-btns">
 										<li>
-											<Link to={ROUTES_LINKS.overview} rel="noreferrer" target="_blank" className="btn btn-primary btn-lg">Go to Dashboard</Link>
+											<Link to={ROUTES_LINKS.auth} rel="noreferrer" target="_blank" className="btn btn-primary btn-lg">SignIn</Link>
 										</li>
 									</ul>
 								</nav>
@@ -68,17 +68,11 @@ export default function Landing() {
 					{/* .header-main*/}
 					<div className="header-content my-auto py-5">
 						<div className="container">
-							<div className="row flex-lg-row-reverse align-items-center justify-content-between g-gs">
-								<div className="col-lg-6 mb-n3 mb-lg-0">
-									<div className="header-image header-image-s2">
-										<img src="/assets/images/lms/theme/a.jpg" alt='' />
-									</div>
-									{/* .header-image */}
-								</div>
+							<div className="row flex-lg-row align-items-center justify-content-between g-gs">
 								{/* .col- */}
 								<div className="col-lg-5 col-md-10">
 									<div className="header-caption">
-										<div className="header-rating rating">
+										{/* <div className="header-rating rating">
 											<ul className="rating-stars">
 												<li><em className="icon ni ni-star-fill" /></li>
 												<li><em className="icon ni ni-star-fill" /></li>
@@ -87,10 +81,10 @@ export default function Landing() {
 												<li><em className="icon ni ni-star-fill" /></li>
 											</ul>
 											<div className="rating-text">Client SEO Management Platform</div>
-										</div>
-										<h1 className="header-title">Manage and organise your clients and workers all in one place</h1>
+										</div> */}
+										<h1 className="header-title">Centralize and Streamline Data on a Unified Platform.</h1>
 										<div className="header-text">
-											<p>Integrate with various platform and interact with them, all in one place</p>
+											<p>Integrate with various platform and interact with them, all in one place.</p>
 										</div>
 										<ul className="header-action btns-inline">
 											<li><a href={ROUTES_LINKS.overview} className="btn btn-primary btn-lg"><span>Go to Dashboard</span></a></li>
@@ -99,6 +93,12 @@ export default function Landing() {
 									</div>
 									{/* .header-caption */}
 								</div>
+								<div className="col-lg-6 mb-n3 mb-lg-0">
+									<div className="header-image header-image-s2">
+										<img src="/assets/images/lms/theme/a.png" alt='' />
+									</div>
+									{/* .header-image */}
+								</div>
 								{/* .col */}
 							</div>
 							{/* .row */}
@@ -106,7 +106,7 @@ export default function Landing() {
 						{/* .container */}
 					</div>
 					{/* .header-content */}
-					<div className="header-brand pb-4 pt-2 pb-lg-5">
+					{/* <div className="header-brand pb-4 pt-2 pb-lg-5">
 						<div className="container">
 							<div className="row align-items-center g-gs">
 								<div className="col-4 col-md-2">
@@ -114,37 +114,29 @@ export default function Landing() {
 										<img src="/assets/images/brand/brand-a.png" alt='' />
 									</div>
 								</div>
-								{/* .col */}
 								<div className="col-4 col-md-2">
 									<div className="brand-item">
 										<img src="/assets/images/brand/brand-b.png" alt='' />
 									</div>
 								</div>
-								{/* .col */}
 								<div className="col-4 col-md-2">
 									<div className="brand-item">
 										<img src="/assets/images/brand/brand-c.png" alt='' />
 									</div>
 								</div>
-								{/* .col */}
 								<div className="col-4 col-md-2">
 									<div className="brand-item">
 										<img src="/assets/images/brand/brand-d.png" alt='' />
 									</div>
 								</div>
-								{/* .col */}
 								<div className="col-4 col-md-2">
 									<div className="brand-item">
 										<img src="/assets/images/brand/brand-a.png" alt='' />
 									</div>
 								</div>
-								{/* .col */}
 							</div>
-							{/* .row */}
 						</div>
-						{/* .header-brand */}
-					</div>
-					{/* .container */}
+					</div> */}
 				</header>
 				{/* .header */}
 				<section className="section section-service pb-0" id="service">
@@ -288,35 +280,27 @@ export default function Landing() {
 						<div className="row align-items-center justify-content-lg-between g-gs">
 							<div className="col-lg-5">
 								<div className="img-block img-block-s1 left">
-									<img src="/assets/images/lms/theme/b.jpg" alt="img" />
+									<img src="/assets/images/lms/theme/b.png" alt="img" />
 								</div>
 								{/* .img-block */}
 							</div>
 							{/* .col */}
 							<div className="col-lg-6">
 								<div className="text-block me-xl-5">
-									<h2 className="title">Improve you site traffic with our <span className="text-primary">New Platform</span> and Modern <span className="text-pink">Design</span></h2>
+									<h2 className="title">Provides   <span className="text-primary"> access</span> to all your platforms in one <span className="text-pink">centralized location.</span></h2>
 									<div className="review review-s3">
 										<div className="review-content">
-											<div className="review-rating rating rating-sm">
-												<ul className="rating-stars">
-													<li><em className="icon ni ni-star-fill" /></li>
-													<li><em className="icon ni ni-star-fill" /></li>
-													<li><em className="icon ni ni-star-fill" /></li>
-													<li><em className="icon ni ni-star-fill" /></li>
-													<li><em className="icon ni ni-star-fill" /></li>
-												</ul>
-											</div>
+											
 											<div className="review-text">
-												<p>Open new doors for you and your business by utilizing your platform and all it's brand new features</p>
-												<h6 className="review-name text-dark">CTO - Maro</h6>
+												<p>Open new doors for you and your business by utilizing your platforms all in one place.</p>
+												{/* <h6 className="review-name text-dark">CTO - Maro</h6> */}
 											</div>
 										</div>
 									</div>
 									{/* .review */}
-									<ul className="btns-inline">
+									{/* <ul className="btns-inline">
 										<li><a href="#x" className="btn btn-lg btn-primary"><span>Learn More</span></a></li>
-									</ul>
+									</ul> */}
 								</div>
 								{/* .text-block */}
 							</div>
@@ -327,16 +311,14 @@ export default function Landing() {
 					{/* .container */}
 				</section>
 				{/* .section */}
-				<section className="section section-feature pb-0">
+				{/* <section className="section section-feature pb-0">
 					<div className="container">
 						<div className="row flex-row-reverse align-items-center justify-content-between g-gs">
 							<div className="col-lg-5">
 								<div className="img-block img-block-s1 right">
 									<img src="/assets/images/lms/theme/c.jpg" alt="img" />
 								</div>
-								{/* .img-block */}
 							</div>
-							{/* .col */}
 							<div className="col-lg-6">
 								<div className="text-block">
 									<h2 className="title">Some unique features and awesome experience</h2>
@@ -399,7 +381,6 @@ export default function Landing() {
 												<p>Organise your client and workers easily. Our platform gives you full control over all features</p>
 											</div>
 										</div>
-										{/* .service */}
 										<div className="service service-s3">
 											<div className="service-icon styled-icon styled-icon-s3 text-success">
 												<svg x="0px" y="0px" viewBox="0 0 512 512" style={{ fill: 'currentColor' }} xmlSpace="preserve">
@@ -463,18 +444,12 @@ export default function Landing() {
 												<p>Get every update and feature we have to offer without any drawback</p>
 											</div>
 										</div>
-										{/* .service */}
 									</div>
 								</div>
-								{/* .text-block */}
 							</div>
-							{/* .col */}
 						</div>
-						{/* .row */}
 					</div>
-					{/* .container */}
 				</section>
-				{/* .section */}
 				<section className="section section-feature">
 					<div className="container">
 						<div className="row align-items-center justify-content-between g-gs">
@@ -483,7 +458,6 @@ export default function Landing() {
 									<img src="/assets/images/lms/theme/d.jpg" alt="img" />
 								</div>
 							</div>
-							{/* .col */}
 							<div className="col-lg-6">
 								<div className="text-block">
 									<h2 className="title">List building tools and lead generation</h2>
@@ -493,15 +467,10 @@ export default function Landing() {
 										<li><a href={ROUTES_LINKS.overview} className="btn btn-lg btn-primary"><span>Go to Dashboard</span></a></li>
 									</ul>
 								</div>
-								{/* .text-block */}
 							</div>
-							{/* .col */}
 						</div>
-						{/* .row */}
 					</div>
-					{/* .container */}
-				</section>
-				{/* .section */}
+				</section> */}
 				<section className="section section-testimonial pb-0" id="reviews">
 					<div className="container">
 						<div className="row justify-content-center text-center">
@@ -565,7 +534,7 @@ export default function Landing() {
 													</ul>
 												</div>
 												<div className="review-text">
-													<p>I love the update you made from BGA 1 to BGA 2</p>
+													<p>I never thought managing my cliens would be this easy. All users have their own access right to different clients</p>
 													<h6 className="review-name text-dark">Mitch Andrew</h6>
 												</div>
 											</div>
@@ -611,7 +580,7 @@ export default function Landing() {
 										</svg>
 									</div>
 									<h2 className="title">Get Started with {process.env.REACT_APP_NAME}</h2>
-									<p className="lead">Over 60 million people have chosen {process.env.REACT_APP_NAME} to power the place on the web they call “home” — join the family.</p>
+									<p className="lead">People have chosen {process.env.REACT_APP_NAME} to power the place on the web they call “home” — join the family.</p>
 									<ul className="btns-inline justify-center">
 										<li>
 											<Link to={ROUTES_LINKS.overview} rel="noreferrer" target="_blank" className="btn btn-xl btn-primary">Get {process.env.REACT_APP_NAME}</Link>
@@ -653,7 +622,7 @@ export default function Landing() {
 						<hr className="hr border-light mb-0 mt-n1" />
 						<div className="row g-3 align-items-center justify-content-md-between py-4">
 							<div className="col-md-8">
-								<div className="text-base">Copyright © 2023 {process.env.REACT_APP_NAME}. Template Made by <a className="text-base fw-bold" href="#x">Softnio</a></div>
+								<div className="text-base">Copyright © 2023 {process.env.REACT_APP_NAME}.</div>
 							</div>
 							{/* .col */}
 							<div className="col-md-4 d-flex justify-content-md-end">

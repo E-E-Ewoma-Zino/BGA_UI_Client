@@ -16,9 +16,9 @@ export default function _sidebar() {
 			<div className="nk-sidebar-element nk-sidebar-head">
 				<div className="nk-sidebar-brand">
 					<Link to={ROUTES_LINKS.overview} className="logo-link nk-sidebar-logo">
-						<img className="logo-light logo-img" src="/assets/images/logo.png" srcSet="/assets/images/logo2x.png 2x" alt="logo" />
-						<img className="logo-dark logo-img" src="/assets/images/logo-dark.png" srcSet="/assets/images/logo-dark2x.png 2x" alt="logo-dark" />
-						<img className="logo-small logo-img logo-img-small" src="/assets/images/logo-small.png" srcSet="/assets/images/logo-small2x.png 2x" alt="logo-small" />
+						<img className="logo-light logo-img" src="/assets/images/logo.png" alt="logo" />
+						<img className="logo-dark logo-img" src="/assets/images/logo-dark.png" alt="logo-dark" />
+						<img className="logo-small logo-img logo-img-small" src="/assets/images/logo-dark-small2x.png"  alt="logo-small" />
 					</Link>
 				</div>
 				<div className="nk-menu-trigger me-n2">
