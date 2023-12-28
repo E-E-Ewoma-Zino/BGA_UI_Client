@@ -5,7 +5,7 @@ const initialState = {
 	error: null,
 	client: JSON.parse(localStorage.getItem("client")) || null,
 	loading: true,
-	isAuthenticated: localStorage.getItem("isAuthenticated") || null,
+	isAuthenticated: JSON.parse(localStorage.getItem("isAuthenticated")) || null,
 	token: localStorage.getItem("token") || null
 }
 

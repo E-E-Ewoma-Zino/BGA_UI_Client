@@ -15,5 +15,3 @@ export const login = async (username, password) => {
 		return error.response?.data || null;
 	}
 }
-
-export const logout = () => localStorage.clear();

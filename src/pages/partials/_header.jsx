@@ -1,16 +1,23 @@
 // Partial Header for dashboard
-import { Link, matchPath, useLocation } from "react-router-dom";
+import { Link, matchPath, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import ROUTES_LINKS from "../../constants/routes";
 import { logOut } from "../../redux/authSlice";
-import { useDispatch, useSelector } from "react-redux";
 
 export default function _header() {
 	const location = useLocation();
+	const navigate = useNavigate();
 	const client = useSelector(state => state.auth.client);
 	const isOverview = !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!matchPath(location.pathname, "/dashboard");
 
 	const dispatch = useDispatch();
-	console.log("my client", client);
+
+	function handleLogout() {
+		dispatch(logOut());
+		localStorage.clear();
+		navigate(ROUTES_LINKS.auth);
+	}
+
 	return (
 		<div className="nk-header nk-header-fixed is-light">
 			<div className="container-fluid">
@@ -50,7 +57,7 @@ export default function _header() {
 									<div className="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
 										<div className="user-card">
 											<div className="user-avatar">
-												<span>{client.firstname.substr(0,1)}{client.lastname.substr(0,1)}</span>
+												<span>{client.firstname.substr(0, 1)}{client.lastname.substr(0, 1)}</span>
 											</div>
 											<div className="user-info">
 												<span className="lead-text">{client.firstname} {client.lastname}</span>
@@ -66,7 +73,7 @@ export default function _header() {
 									</div>
 									<div className="dropdown-inner">
 										<ul className="link-list">
-											<li><a href="#x"><em className="icon ni ni-signout" onClick={() => dispatch(logOut())} /><span>Sign out</span></a></li>
+											<li><a href="#x" onClick={handleLogout}><em className="icon ni ni-signout" /><span>Sign out</span></a></li>
 										</ul>
 									</div>
 								</div>

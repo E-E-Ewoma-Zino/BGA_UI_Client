@@ -1,9 +1,20 @@
 // landing page
-import { Link } from "react-router-dom";
 import ROUTES_LINKS from "../../constants/routes";
+import Components from "../../components";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useEffect, useState } from "react";
 
 export default function Landing() {
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setIsLoading(false);
+			console.log("is loading", isLoading);
+		}, 2000);
+	});
+
 	return (
 		<div className="nk-app-root">
 			<Helmet>
@@ -11,6 +22,7 @@ export default function Landing() {
 				{/* <!-- Landing Page StyleSheet --> */}
 				<link rel="stylesheet" href="/assets/css/landingPage/dashlite.css?ver=3.2.3" />
 				<link id="skin-default" rel="stylesheet" href="/assets/css/landingPage/theme.css?ver=3.2.3" />
+				<link rel="stylesheet" href="/assets/css/skins/theme-red.css" />
 			</Helmet>
 
 			{/* main @s */}
@@ -74,15 +86,15 @@ export default function Landing() {
 												<li><em className="icon ni ni-star-fill" /></li>
 												<li><em className="icon ni ni-star-fill" /></li>
 											</ul>
-											<div className="rating-text">30 days free trial</div>
+											<div className="rating-text">Client SEO Management Platform</div>
 										</div>
-										<h1 className="header-title">Instantly upload any software usage nio saasbox data</h1>
+										<h1 className="header-title">Manage and organise your clients and workers all in one place</h1>
 										<div className="header-text">
-											<p>Dictum metus id fermentum efficitur. Praesent ultrices justo in feugiat condimentum. </p>
+											<p>Integrate with various platform and interact with them, all in one place</p>
 										</div>
 										<ul className="header-action btns-inline">
-											<li><a href="#x" className="btn btn-primary btn-lg"><span>Start Free Trial</span></a></li>
-											<li><a href="#x" className="link link-block link-gray"><em className="icon icon-lg ni ni-play-circle" /><span>Watch video</span></a></li>
+											<li><a href={ROUTES_LINKS.overview} className="btn btn-primary btn-lg"><span>Go to Dashboard</span></a></li>
+											{/* <li><a href="#x" className="link link-block link-gray"><em className="icon icon-lg ni ni-play-circle" /><span>Watch video</span></a></li> */}
 										</ul>
 									</div>
 									{/* .header-caption */}
@@ -167,7 +179,7 @@ export default function Landing() {
 										</div>
 										<div className="service-text">
 											<h4 className="title">Advanced Statistics</h4>
-											<p>But I must explain to you how all this mistaken idea of pleasure.</p>
+											<p>Data and reports on all your client activities.</p>
 										</div>
 									</div>
 									{/* .service */}
@@ -215,7 +227,7 @@ export default function Landing() {
 										</div>
 										<div className="service-text">
 											<h4 className="title">Powerful Admin</h4>
-											<p>Expound the actual teachings of the great explorer of the truth.</p>
+											<p>Gain control over all activities in the platform. Nothing will gets pass you.</p>
 										</div>
 									</div>
 									{/* .service */}
@@ -258,7 +270,7 @@ export default function Landing() {
 										</div>
 										<div className="service-text">
 											<h4 className="title">Security Updates</h4>
-											<p>Praising pain was born and I will give you a complete account.</p>
+											<p>Get all the latest updates and patches on your platforms security and features.</p>
 										</div>
 									</div>
 									{/* .service */}
@@ -283,7 +295,7 @@ export default function Landing() {
 							{/* .col */}
 							<div className="col-lg-6">
 								<div className="text-block me-xl-5">
-									<h2 className="title">Build a better software with Our <span className="text-primary">Conceptual Apps</span> and Modern <span className="text-pink">UI Elements</span></h2>
+									<h2 className="title">Improve you site traffic with our <span className="text-primary">New Platform</span> and Modern <span className="text-pink">Design</span></h2>
 									<div className="review review-s3">
 										<div className="review-content">
 											<div className="review-rating rating rating-sm">
@@ -296,8 +308,8 @@ export default function Landing() {
 												</ul>
 											</div>
 											<div className="review-text">
-												<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-												<h6 className="review-name text-dark">Samuel Mishin</h6>
+												<p>Open new doors for you and your business by utilizing your platform and all it's brand new features</p>
+												<h6 className="review-name text-dark">CTO - Maro</h6>
 											</div>
 										</div>
 									</div>
@@ -384,7 +396,7 @@ export default function Landing() {
 											</div>
 											<div className="service-text">
 												<h4 className="title">Easy to manage</h4>
-												<p>Many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+												<p>Organise your client and workers easily. Our platform gives you full control over all features</p>
 											</div>
 										</div>
 										{/* .service */}
@@ -448,7 +460,7 @@ export default function Landing() {
 											</div>
 											<div className="service-text">
 												<h4 className="title">A complete feature</h4>
-												<p>Slightly variations of passages available the majority have suffered alteration even slightly believable.</p>
+												<p>Get every update and feature we have to offer without any drawback</p>
 											</div>
 										</div>
 										{/* .service */}
@@ -475,108 +487,13 @@ export default function Landing() {
 							<div className="col-lg-6">
 								<div className="text-block">
 									<h2 className="title">List building tools and lead generation</h2>
-									<p className="lead">But the majority have suffered alteration in some form, by injected humour, or randomised slightly believable.</p>
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+									<p className="lead">Build your team of workers. Assign them clients to manage and manage your activities.</p>
+									<p>Utilize the widget feature and generate a perfect lead magnet for your client </p>
 									<ul className="btns-inline">
-										<li><a href="#x" className="btn btn-lg btn-primary"><span>Get The App</span></a></li>
+										<li><a href={ROUTES_LINKS.overview} className="btn btn-lg btn-primary"><span>Go to Dashboard</span></a></li>
 									</ul>
 								</div>
 								{/* .text-block */}
-							</div>
-							{/* .col */}
-						</div>
-						{/* .row */}
-					</div>
-					{/* .container */}
-				</section>
-				{/* .section */}
-				<section className="section section-pricing bg-lighter" id="pricing">
-					<div className="container">
-						<div className="row justify-content-center">
-							<div className="col-xl-4 col-md-5 col-sm-7">
-								<div className="section-head text-center">
-									<h2 className="title">Choose the perfect plan for you</h2>
-								</div>
-								{/* .section-head */}
-							</div>
-							{/* .col */}
-						</div>
-						{/* .row */}
-						<div className="row justify-content-center justify-content-lg-between align-items-center text-center g-gs">
-							<div className="col-xl-3 col-sm-6">
-								<div className="pricing pricing-s1 card card-shadow round-xl">
-									<div className="card-inner card-inner-lg">
-										<h2 className="pricing-amount fs-1">$19 <small>/yr</small></h2>
-										<span className="sub-title">1 User, Billed Yearly</span>
-										<h5 className="pricing-title">Single User</h5>
-										<ul className="pricing-features list list-nostyle">
-											<li>Full Access Library</li>
-											<li>24/7 Tech Support</li>
-											<li><del>Additional Features</del></li>
-											<li><del>6GB Storage</del></li>
-										</ul>
-										<div className="pricing-action">
-											<a href="#x" className="btn btn-primary btn-lg btn-block"><span>Purchase Now</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							{/* .col */}
-							<div className="col-xl-3 col-sm-6">
-								<div className="pricing pricing-featured pricing-s1 card card-shadow round-xl">
-									<div className="card-inner card-inner-lg">
-										<h2 className="pricing-amount fs-1">$99 <small>/yr</small></h2>
-										<span className="sub-title">10 User, Billed Yearly</span>
-										<h5 className="pricing-title">Advanced User</h5>
-										<ul className="pricing-features list list-nostyle">
-											<li>Full Access Library</li>
-											<li>24/7 Tech Support</li>
-											<li><del>Additional Features</del></li>
-											<li><del>6GB Storage</del></li>
-										</ul>
-										<div className="pricing-action">
-											<a href="#x" className="btn btn-primary btn-lg btn-block"><span>Purchase Now</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							{/* .col */}
-							<div className="col-xl-3 col-sm-6">
-								<div className="pricing pricing-s1 card card-shadow round-xl">
-									<div className="card-inner card-inner-lg">
-										<h2 className="pricing-amount fs-1">$45 <small>/yr</small></h2>
-										<span className="sub-title">6 User, Billed Yearly</span>
-										<h5 className="pricing-title">Premium User</h5>
-										<ul className="pricing-features list list-nostyle">
-											<li>Full Access Library</li>
-											<li>24/7 Tech Support</li>
-											<li>Additional Features</li>
-											<li><del>6GB Storage</del></li>
-										</ul>
-										<div className="pricing-action">
-											<a href="#x" className="btn btn-primary btn-lg btn-block"><span>Purchase Now</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							{/* .col */}
-							<div className="col-xl-3 col-sm-6">
-								<div className="pricing pricing-s1 card card-shadow round-xl">
-									<div className="card-inner card-inner-lg">
-										<h2 className="pricing-amount fs-1">$29 <small>/yr</small></h2>
-										<span className="sub-title">3 User, Billed Yearly</span>
-										<h5 className="pricing-title">Starter User</h5>
-										<ul className="pricing-features list list-nostyle">
-											<li>Full Access Library</li>
-											<li>24/7 Tech Support</li>
-											<li>Additional Features</li>
-											<li><del>6GB Storage</del></li>
-										</ul>
-										<div className="pricing-action">
-											<a href="#x" className="btn btn-primary btn-lg btn-block"><span>Purchase Now</span></a>
-										</div>
-									</div>
-								</div>
 							</div>
 							{/* .col */}
 						</div>
@@ -617,8 +534,8 @@ export default function Landing() {
 													</ul>
 												</div>
 												<div className="review-text">
-													<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-													<h6 className="review-name text-dark">Samuel Mishin</h6>
+													<p>I never thought managing my cliens would be this easy. All users have their own access right to different clients</p>
+													<h6 className="review-name text-dark">Sarah</h6>
 												</div>
 											</div>
 										</div>
@@ -648,8 +565,8 @@ export default function Landing() {
 													</ul>
 												</div>
 												<div className="review-text">
-													<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-													<h6 className="review-name text-dark">Samuel Mishin</h6>
+													<p>I love the update you made from BGA 1 to BGA 2</p>
+													<h6 className="review-name text-dark">Mitch Andrew</h6>
 												</div>
 											</div>
 											{/* .review */}
@@ -757,6 +674,12 @@ export default function Landing() {
 				{/* .footer */}
 			</div>
 			{/* main @e */}
+			{
+				isLoading && <div className="position-fixed top-0 w-100 h-100 bg-dark d-flex justify-center align-center flex-column" style={{ zIndex: 1000 }}>
+					{/* <img src="/assets/images/logo-dark.png" alt="loading state" className="img-fluid" width="10%" /> */}
+					<Components.Spinner color="primary" />
+				</div>
+			}
 		</div>
 
 	);

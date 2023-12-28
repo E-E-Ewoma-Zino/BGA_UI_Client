@@ -1,6 +1,7 @@
 // This is the layout used by all other pages
 import { Outlet, matchPath, useLocation } from "react-router-dom";
 import Partial from "../partials";
+import { Helmet } from "react-helmet";
 
 export default function RootLayout() {
 	const location = useLocation();
@@ -8,6 +9,9 @@ export default function RootLayout() {
 
 	return (
 		<div className="nk-app-root">
+			<Helmet>
+				<title>BGA Dashboard</title>
+			</Helmet>
 			{/* main @s */}
 			<div className="nk-main">
 				{/* sidebar @s */}

@@ -26,12 +26,12 @@ export default function Dashboard() {
 						<div className="toggle-wrap nk-block-tools-toggle">
 							<a href="#x" className="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em className="icon ni ni-more-v" /></a>
 							<div className="toggle-expand-content" data-content="pageMenu">
-								<ul className="nk-block-tools g-3">
+								{/* <ul className="nk-block-tools g-3">
 									<li>
 										<Components.DropdownBtn />
 									</li>
 									<li className="nk-block-tools-opt"><a href="#x" className="btn btn-primary"><em className="icon ni ni-reports" /><span>Reports</span></a></li>
-								</ul>
+								</ul> */}
 							</div>
 						</div>
 					</div>
@@ -50,7 +50,6 @@ export default function Dashboard() {
 						<Await resolve={loadedWidgets.widget} errorElement={<h3>Failed to load Widget. Reload Page!</h3>} >
 							{
 								(myWidgets) => {
-									console.log("what are my widget", myWidgets);
 									if (myWidgets.error) return window.NioApp.Toast("<h5>Failed to load widgets</h5>Reload page to try again." || "Failled to login", "error");
 
 									return myWidgets.length && myWidgets.map((widget, index) =>
@@ -72,5 +71,5 @@ export default function Dashboard() {
 
 export function GetAllWidgetLoader() {
 
-	return defer({ widget: getAllWidget(JSON.parse(localStorage.getItem("client")).client_id) });
+	return defer({ widget: getAllWidget(JSON.parse(localStorage.getItem("client"))?.client_id) });
 }

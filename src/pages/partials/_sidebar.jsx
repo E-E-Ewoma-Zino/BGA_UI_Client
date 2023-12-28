@@ -43,7 +43,7 @@ export default function _sidebar() {
 											{/* .nk-menu-item */}
 											<Link to="#x" className="nk-menu-link" onClick={() => console.log("I was clicked", dispatch(currentMenu(menus[key].url)))}>
 												<span className="nk-menu-icon">
-													<em className="icon ni ni-dashboard" />
+													<em className="icon ni ni-view-x7" />
 												</span>
 												<span className="nk-menu-text">{menus[key].name}</span>
 											</Link>
@@ -53,7 +53,7 @@ export default function _sidebar() {
 											{/* .nk-menu-item */}
 											<a href="#x" className="nk-menu-link nk-menu-toggle">
 												<span className="nk-menu-icon">
-													<em className="icon ni ni-users-fill" />
+													<em className="icon ni ni-view-list-fill" />
 												</span>
 												<span className="nk-menu-text">{menus[key].name}</span>
 											</a>

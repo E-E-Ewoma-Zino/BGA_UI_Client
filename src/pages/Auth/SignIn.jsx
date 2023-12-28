@@ -33,6 +33,7 @@ export default function SignIn() {
 	// on user submit
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		dispatch(clientSignIn(null)); // to start the loading
 
 		try {
 			const client = await login(input.username, input.password);
@@ -46,6 +47,7 @@ export default function SignIn() {
 
 				window.NioApp.Toast("Successful Login", "success");
 				setTimeout(() => {
+					dispatch(authError(null));
 					navigate(ROUTES_LINKS.overview);
 				}, 1000);
 			}
