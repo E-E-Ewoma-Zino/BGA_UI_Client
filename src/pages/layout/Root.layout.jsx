@@ -22,7 +22,7 @@ export default function RootLayout() {
 				{/* wrap @s */}
 				<div className="nk-wrap">
 					{/* main header @s */}
-					<Partial.Header />
+					 <Partial.Header />
 					{/* main header @e */}
 					{/* content @s */}
 					<div id='nk-content'  className="nk-content">
@@ -34,7 +34,7 @@ export default function RootLayout() {
 					</div>
 					{/* content @e */}
 					{/* footer @s */}
-					<Partial.Footer />
+					 <Partial.Footer />
 					{/* footer @e */}
 				</div>
 				{/* wrap @e */}

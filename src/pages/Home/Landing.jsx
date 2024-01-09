@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
 import landingPic from '../../assets/image/a.png'
 import landingPic2 from '../../assets/image/b.png'
+import './landing.css'
 
 export default function Landing() {
 	const [isLoading, setIsLoading] = useState(true);

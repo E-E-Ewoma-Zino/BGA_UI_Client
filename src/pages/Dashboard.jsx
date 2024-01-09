@@ -1,47 +1,34 @@
 // Dashboard for Admin
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import getAllWidget from "../api/widget";
 import Components from "../components";
 import { Await, defer, useLoaderData } from "react-router-dom";
 import { setWidgetId } from "../redux/widgetSlice";
-import { Suspense } from "react";
+import { Menu, MenuItem, SubMenu } from "@spaceymonk/react-radial-menu";
+import { Suspense, useState, useEffect } from "react";
+import Widget from "../components/Cards/widget";
+import { PieChart, pieArcLabelClasses } from '@mui/x-charts/PieChart';
+import './dashboard.css'
 
 
 export default function Dashboard() {
 	const loadedWidgets = useLoaderData();
 	const dispatch = useDispatch();
+	const pieParams = { height: 200, margin: { right: 5 } };
+	const data = [
+		{ value: 5, label: 'A' },
+		{ value: 10, label: 'B' },
+		{ value: 15, label: 'C' },
+		{ value: 20, label: 'D' },
+	  ];
+	  
+
 
 	return (
-		<div className="nk-content-body">
-			<div className="nk-block-head nk-block-head-sm">
-				<div className="nk-block-between">
-					<div className="nk-block-head-content">
-						<h3 className="nk-block-title page-title d-flex justify-center align-center">
-							<em className="icon ni ni-dashboard me-2" />
-							Overview
-						</h3>
-					</div>
-					{/* .nk-block-head-content */}
-					<div className="nk-block-head-content">
-						<div className="toggle-wrap nk-block-tools-toggle">
-							<a href="#x" className="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em className="icon ni ni-more-v" /></a>
-							<div className="toggle-expand-content" data-content="pageMenu">
-								{/* <ul className="nk-block-tools g-3">
-									<li>
-										<Components.DropdownBtn />
-									</li>
-									<li className="nk-block-tools-opt"><a href="#x" className="btn btn-primary"><em className="icon ni ni-reports" /><span>Reports</span></a></li>
-								</ul> */}
-							</div>
-						</div>
-					</div>
-					{/* .nk-block-head-content */}
-				</div>
-				{/* .nk-block-between */}
-			</div>
+		<div className="nk-content-body dash-body">
 			{/* .nk-block-head */}
 			<div className="nk-block">
-				<div className="row g-gs">
+				<div className="row g-gs ">
 					<Suspense fallback={
 						<div className="w-100 d-flex justify-center align-center">
 							<Components.Spinner color="primary" />
@@ -61,6 +48,26 @@ export default function Dashboard() {
 							}
 						</Await>
 					</Suspense>
+					
+					{/* <div>
+					<PieChart
+						series={[{ 
+							arcLabel: (item) => `${item.label} (${item.value})`,
+							arcLabelMinAngle: 45,
+							data,
+							innerRadius: 30,
+							outerRadius: 100,
+							paddingAngle: 5,
+							cornerRadius: 5,
+							startAngle: -90,
+							endAngle: 90,
+							cx: 150,
+							cy: 150,
+						}]}
+						{...pieParams}
+					/>
+					</div> */}
+					
 				</div>
 				{/* .row */}
 			</div>
