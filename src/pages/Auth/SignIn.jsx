@@ -101,7 +101,7 @@ console.log(loginState)
 												<div className="form-control-wrap">
 													<span  className="form-icon form-icon-right input-icon  lg">
 														{/* <em className="passcode-icon icon-show icon ni ni-eye" /> */}
-														<em class="icon ni ni-user" />
+														<em className="icon ni ni-user" />
 													</span>
 													<input type="email" className="form-control p-4 bga-input form-control-lg" id="default-01" name="username" value={input.username} onChange={handleInputChange} placeholder="Enter your email here" required={true} />
 												</div>

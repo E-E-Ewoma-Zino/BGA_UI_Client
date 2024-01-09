@@ -17,7 +17,7 @@ const authSlice = createSlice({
 			state.loading = true;
 			state.isAuthenticated = true;
 			state.client = action.payload;
-			state.token = localStorage.getItem("token");
+			state.token = action.payload?.token?.token
 		},
 		authError: (state, action) => {
 			state.loading = false;

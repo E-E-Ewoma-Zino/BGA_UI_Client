@@ -6,7 +6,6 @@ const getAllWidget = async (clientId) => {
 		console.log("the tokeikknn", localStorage.getItem("token"));
 		const { data } = await REQUEST.get("/widget/get/all/" + clientId, {
 			headers: {
-				"Content-Type": "application/json",
 				Authorization: localStorage.getItem("token")
 			}
 		});

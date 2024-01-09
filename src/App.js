@@ -1,7 +1,7 @@
 import { Dashboard, GetAllWidgetLoader, Landing, NotFound, NotFoundAlt, SignIn, WidgetView, getAllMenuLoader } from "./pages/index";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import ROUTES_LINKS from "./constants/routes";
-import PageLayouts from "./pages/layout/index";
+import PageLayouts from "./pages/Layout/index";
 import UTILS from "./utils";
 import './app.css'
 
